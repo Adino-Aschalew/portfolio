@@ -1,18 +1,20 @@
-import Header from './pages/Header'
-import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Services from './pages/Services';
+import Header from './components/Header'
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/Contact'
+import Services from './components/Services';
+import Footer from './components/Footer';
 const App = () => {
   return ( 
-  <>
-  <Header />
-  <Home />
-  <About />
-  <Services/>
-  <Contact />
-  </> 
+    <>
+      <Header />
+      <Home />
+      <About />
+      <Services/>
+      <Contact />
+      <Footer/>
+    </> 
   );
 }
- 
+
 export default App;
