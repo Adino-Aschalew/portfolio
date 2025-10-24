@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import {FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { PageLinks } from './NavLinks';
 import { motion, AnimatePresence } from 'framer-motion';
+import image from '../assets/image.jpg'
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
@@ -136,13 +137,9 @@ const Header = () => {
             >
               <div className="mobile-nav-header">
                 <span className="nav-title">Navigation</span>
-                <button 
-                  className="close-btn" 
-                  onClick={() => setShowNav(false)}
-                  aria-label="Close navigation"
-                >
-                  <FaTimes />
-                </button>
+                     <img src={image} alt='profile' className='nav-img'/>
+                  <small className='small'>adino aschalew</small>
+               
               </div>
               
               <nav className="mobile-nav-content">
