@@ -12,14 +12,7 @@ const About = () => {
 
   return (
     <section id="about" className="about-section">
-      <div className="about-container">
-        <div className="about-image">
-          <div className="image-wrapper">
-            <img src={image} alt="Profile" className="profile-image" />
-            <div className="image-border"></div>
-          </div>
-        </div>
-        
+      <div className="about-container">  
         <div className="about-content">
           <div className="section-header">
             <h2>About <span>Me</span></h2>

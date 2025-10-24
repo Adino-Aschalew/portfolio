@@ -21,7 +21,9 @@ body {
   display: flex;
   flex-direction: column;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -239,21 +241,17 @@ button:hover,
   font-weight: 600;
 }
 .about-container{
-  padding: 12rem .5rem;
+  padding: 10rem .5rem;
   display: flex;
+  text-align: center;
   justify-content: center;
   gap: 8rem;
 }
-.rectangle{
- max-height: 450px;
-}
-.rectangle img{
-  width: 400px;
-  height: 450px;
-}
+
 .about-container p{
   max-width: 500px;
-  text-align: justify;
+  margin: auto;
+  text-align: center;
   letter-spacing: .4px;
   font-family: "oswald";
   text-transform: capitalize;
@@ -322,7 +320,6 @@ img{
   border-radius: 25px;
   height: 70vh;
   display: grid !important;
-  background-image: linear-gradient(to top,#8e54e9,#4776e6);
 }
 .abt-page{
   display: flex;
@@ -333,7 +330,7 @@ img{
 .abt-page p{
   color: rgba(255, 255, 255, 0.904);
   max-width: 500px;
-  text-align: justify;
+  text-align: center;
   font-family: "oswald";
   letter-spacing: 0.5px;
   font-weight: 490;
@@ -360,16 +357,7 @@ margin: 0;
 .abt-page p,.abt-page h2{
   margin: 0;
 }
-.rectangle img{
-  width: 200px !important;
-  height: 200px !important;
-  border: 8px solid white;
-  margin-top: -15%;
-  margin-left: 29%;
-}
-.rectangle img{
-  border-radius: 5px;
-}
+
 .let-talk{
   background: #0950f3 ;
   border: none;
@@ -391,9 +379,6 @@ margin: 0;
   background-color: #0131a1;
   transition: background-color .3s ease-in-out;
 }
-  .victory-icon{
-    display: none !important;
-  }
      .buttons .hire:hover,
      .buttons .cv:hover{
     background-color: transparent;
@@ -1570,58 +1555,13 @@ margin: 0;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  gap: 2rem;
   align-items: center;
 }
-
-.about-image {
-  position: relative;
-  z-index: 1;
-}
-
-.image-wrapper {
-  position: relative;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.profile-image {
-  width: 100%;
-  border-radius: 10px;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.image-border {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  right: -20px;
-  bottom: -20px;
-  border: 3px solid #4d05c2;
-  border-radius: 10px;
-  z-index: 1;
-  transition: all 0.3s ease;
-}
-
-.about-image:hover .profile-image {
-  transform: translate(-10px, -10px);
-}
-
-.about-image:hover .image-border {
-  top: 10px;
-  left: 10px;
-  right: -10px;
-  bottom: -10px;
-}
-
 .about-content {
-  position: relative;
-  z-index: 2;
+ position: relative;
+  z-index: 10;
 }
 
 .about-text h3 {
@@ -1643,17 +1583,18 @@ margin: 0;
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin: 2.5rem 0;
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1rem
 }
 
 .skill-item {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 3 1fr;
   gap: 1rem;
-  padding: 1.2rem;
+  padding: 1.5rem 4rem;
   background: #f8f9fa;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -1718,12 +1659,8 @@ margin: 0;
     text-align: center;
   }
   
-  .image-wrapper {
-    margin: 0 auto 3rem;
-  }
-  
   .skills-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     max-width: 500px;
     margin: 2.5rem auto;
   }
@@ -1743,7 +1680,7 @@ margin: 0;
   }
   
   .skills-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
 
@@ -2080,3 +2017,765 @@ small{
   backdrop-filter: blur(10px);
   box-shadow: 0 0 10px;
 }
+
+/* Skills Section */
+#skills {
+  padding: 6rem 2rem;
+  background: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-container h1 {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.skills-container h1 span {
+  color: #4d05c2;
+}
+
+.skills-container h1::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: #4d05c2;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+.skill-category {
+  margin-bottom: 2.5rem;
+}
+
+.skill-category h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e9ecef;
+  position: relative;
+}
+
+.skill-category h3::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: #4d05c2;
+}
+
+.skill-item {
+  margin-bottom: 2.5rem;
+  position: relative;
+  padding: 0.8rem 0;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 1rem;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.skill-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 5px;
+  position: relative;
+  width: 100%;
+  background-size: var(--progress) 100%;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) inset;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: background-size;
+  transition: background-size 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+  animation-delay: calc(var(--index, 0) * 0.1s);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Add a subtle shine effect that moves across the bar */
+@keyframes shine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.2) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%);
+  animation: shine 2.5s infinite ease-in-out;
+  animation-delay: 1s; /* Start after the bar fills */
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* When the bar is in view, trigger the animation */
+.progress-bar.in-view {
+  animation: fillProgress 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+             fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fillProgress {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: var(--progress) 100%;
+  }
+}
+
+/* Percentage indicator on the progress bar */
+.progress-bar::before {
+  content: attr(data-percent);
+  position: absolute;
+  top: -25px;
+  right: 0;
+  background: #4d05c2;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  opacity: 1;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Arrow pointing to the progress bar */
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background: #4d05c2;
+  transform: rotate(45deg);
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Styling for percentage display */
+.skill-percent {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-left: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  background: rgba(108, 117, 125, 0.1);
+  color: #4a5568;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  text-align: center;
+}
+
+.skill-percent-high {
+  background: rgba(77, 5, 194, 0.1);
+  color: #4d05c2;
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(77, 5, 194, 0.15);
+}
+
+.progress-percent {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  z-index: 2;
+  opacity: 0.95;
+  transition: all 0.2s ease;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+}
+
+/* Hover effects */
+.skill-item:hover .skill-percent {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.skill-item:hover .skill-percent-high {
+  box-shadow: 0 3px 10px rgba(77, 5, 194, 0.2);
+}
+
+.skill-item:hover .progress-percent {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.05);
+  right: 6px;
+}
+
+/* Ensure text is visible on all progress bars with appropriate contrast */
+.progress-bar[data-level='high'] .progress-percent {
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+
+.progress-bar[data-level='medium'] .progress-percent {
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.progress-bar[data-level='low'] .progress-percent {
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+}
+
+/* Different colors based on skill level */
+.progress-bar[data-level='high'] {
+  background: linear-gradient(
+    90deg,
+    #4d05c2 0%,
+    #8e54e9 100%
+  );
+  background-size: var(--progress) 100%;
+  background-repeat: no-repeat;
+  background-color: #e9ecef;
+}
+
+.progress-bar[data-level='high']::before {
+  background: #4d05c2;
+}
+
+.progress-bar[data-level='high']::after {
+  background: #4d05c2;
+}
+
+.progress-bar[data-level='medium'] {
+  background: linear-gradient(
+    90deg,
+    #4776e6 0%,
+    #6a8fe9 100%
+  );
+  background-size: var(--progress) 100%;
+  background-repeat: no-repeat;
+  background-color: #e9ecef;
+}
+
+.progress-bar[data-level='medium']::before,
+.progress-bar[data-level='medium']::after {
+  background: #4776e6;
+}
+
+.progress-bar[data-level='low'] {
+  background: linear-gradient(
+    90deg,
+    #5f72bd 0%,
+    #9fa8da 100%
+  );
+  background-size: var(--progress) 100%;
+  background-repeat: no-repeat;
+  background-color: #e9ecef;
+}
+
+.progress-bar[data-level='low']::before,
+.progress-bar[data-level='low']::after {
+  background: #5f72bd;
+}
+
+/* Shine effect for the progress bar */
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,0.2) 50%, 
+    rgba(255,255,255,0) 100%);
+  animation: shine 2s infinite linear;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Animate progress bars when in view */
+@keyframes fillProgress {
+  from { width: 0; }
+  to { width: var(--progress); }
+}
+
+.skill-item.in-view .progress-bar {
+  animation: fillProgress 1.5s forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #skills {
+    padding: 4rem 0.5rem;
+  }
+  
+  .skills-container h1 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .skills-grid {
+    gap: 1.5rem;
+  }
+  
+  .skill-category h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .skill-name {
+    font-size: 1rem;
+  }
+  
+  .progress-container {
+    height: 8px;
+  }
+}
+
+/* Add Intersection Observer for scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-category {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.skill-category:nth-child(1) { animation-delay: 0.1s; }
+.skill-category:nth-child(2) { animation-delay: 0.2s; }
+.skill-category:nth-child(3) { animation-delay: 0.3s; }
+
+/* Projects Section */
+.projects-section {
+  padding: 6rem 1rem;
+  background: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.section-header h2 span {
+  color: #4d05c2;
+}
+
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background: #4d05c2;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6px;
+  width: 40px;
+  height: 3px;
+  background: #8e54e9;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.project-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background: #f0f2f5;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-links {
+  opacity: 1;
+}
+
+.project-link {
+  color: white;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.demo-link {
+  background: #4d05c2;
+  border: 1px solid #4d05c2;
+}
+
+.github-link {
+  background: transparent;
+  border: 1px solid white;
+}
+
+.demo-link:hover {
+  background: #3a048f;
+  transform: translateY(-2px);
+}
+
+.github-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.project-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.project-content h3 a {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.project-content h3 a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #4d05c2;
+  transition: width 0.3s ease;
+}
+
+.project-content h3 a:hover {
+  color: #4d05c2;
+}
+
+.project-content h3 a:hover::after {
+  width: 100%;
+}
+
+/* Add external link icon for demo links */
+.project-content h3 a[target="_blank"]::after {
+  content: '↗';
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.8em;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.2s ease;
+}
+
+.project-content h3 a[target="_blank"]:hover::after {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.project-content p {
+  color: #666;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background: rgba(77, 5, 194, 0.08);
+  color: #4d05c2;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(77, 5, 194, 0.15);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.tech-tag:hover {
+  background: rgba(77, 5, 194, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.tech-tag[data-category="frontend"] {
+  background: rgba(77, 5, 194, 0.1);
+  color: #4d05c2;
+  border-color: rgba(77, 5, 194, 0.2);
+}
+
+.tech-tag[data-category="backend"] {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.tech-tag[data-category="database"] {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.tech-tag[data-category="tool"] {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.tech-tag[data-category="api"] {
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+  border-color: rgba(236, 72, 153, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 4rem 1rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .project-links {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+  }
+}
+
+/* Animation for project cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
