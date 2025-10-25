@@ -1,6 +1,4 @@
 import { FaCode, FaPaintBrush, FaMobile, FaServer } from 'react-icons/fa';
-import { FaLaptopCode } from 'react-icons/fa';
-import image from '../assets/image.jpg';
 
 const About = () => {
   const skills = [
@@ -21,11 +19,10 @@ const About = () => {
           </div>
           
           <div className="about-text">
-            <h3>I'm a <span className="highlight">Full Stack Developer</span> based in Addis Ababa, Ethiopia</h3>
+            <h3>I'm a <span className="highlight">Full Stack Developer</span> based in Bahir Dar, Ethiopia</h3>
             <p>
               Passionate about creating beautiful, functional, and user-centered digital experiences. 
-              With a strong foundation in both front-end and back-end development, I bring ideas to life 
-              through clean, efficient code and thoughtful design.
+              With a strong foundation in both front-end and back-end development, I bring ideas to life through clean, efficient code and thoughtful design.
             </p>
             
             <div className="skills-grid">

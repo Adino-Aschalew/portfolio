@@ -132,7 +132,6 @@ const Home = () => {
                 alt="Adino Aschalew" 
                 className="profile-image"
               />
-              <div className="image-border"></div>
               <div className="floating-shapes">
                 {[...Array(5)].map((_, i) => (
                   <div key={i} className={`shape shape-${i + 1}`}></div>

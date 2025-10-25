@@ -19,16 +19,16 @@ const Footer = () => {
         </div>
         
         <div className="social-links">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href="https://github.com/Adino-Aschalew" target="_blank" rel="noopener noreferrer" className="social-link">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href="https://linkedin.com/in/Adino-Aschalew" target="_blank" rel="noopener noreferrer" className="social-link">
             <FaLinkedin />
           </a>
-          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href="https://twitter.com/Adino-Aschalew" target="_blank" rel="noopener noreferrer" className="social-link">
             <FaTwitter />
           </a>
-          <a href="mailto:your.email@example.com" className="social-link">
+          <a href="adinoaschalew1995@gmail.com" target="_blank" rel="noopener noreferrer" className="social-link">
             <FaEnvelope />
           </a>
         </div>

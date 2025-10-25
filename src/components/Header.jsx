@@ -33,10 +33,10 @@ const Header = () => {
   };
 
   const socialLinks = [
-    { icon: <FaGithub />, url: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: <FaLinkedin />, url: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: <FaTwitter />, url: 'https://twitter.com/yourusername', label: 'Twitter' },
-    { icon: <HiOutlineMail />, url: 'mailto:your.email@example.com', label: 'Email' },
+    { icon: <FaGithub />, url: 'https://github.com/Adino-Aschalew', label: 'GitHub' },
+    { icon: <FaLinkedin />, url: 'https://linkedin.com/in/Adino-Aschalew', label: 'LinkedIn' },
+    { icon: <FaTwitter />, url: 'https://twitter.com/Adino-Aschalew', label: 'Twitter' },
+    { icon: <HiOutlineMail />, url: 'adinoaschalew1995@gmail.com', label: 'Email' },
   ];
 
   const navVariants = {
@@ -142,8 +142,6 @@ const Header = () => {
             ))}
           </motion.ul>
         </nav>
-
-        {/* Mobile Navigation Toggle */}
 
         {/* Mobile Navigation */}
         <AnimatePresence>
