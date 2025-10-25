@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
-import {FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
+import { FaSun, FaMoon } from 'react-icons/fa';
 import { PageLinks } from './NavLinks';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useDarkMode } from '../contexts/DarkModeContext';
 import image from '../assets/image.jpg'
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   // Handle scroll effect
   useEffect(() => {
@@ -38,15 +41,15 @@ const Header = () => {
 
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         staggerChildren: 0.1,
         delayChildren: 0.2
       }
     },
-    exit: { 
+    exit: {
       opacity: 0,
       y: -20,
       transition: {
@@ -58,8 +61,8 @@ const Header = () => {
 
   const navItemVariants = {
     hidden: { opacity: 0, y: -10 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         type: 'spring',
@@ -67,8 +70,8 @@ const Header = () => {
         damping: 20
       }
     },
-    exit: { 
-      opacity: 0, 
+    exit: {
+      opacity: 0,
       y: -10,
       transition: {
         duration: 0.2
@@ -84,34 +87,51 @@ const Header = () => {
             Adino<span className="logo-dot">.</span>
           </a>
         </div>
-        <button 
-          className={`mobile-toggle ${showNav ? 'active' : ''}`} 
-          onClick={() => setShowNav(!showNav)}
-          aria-label="Toggle navigation"
-        >
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </button>
+        <div className="header-actions">
+          <button
+            className="theme-toggle"
+            onClick={toggleDarkMode}
+            aria-label="Toggle dark mode"
+            title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            <motion.div
+              className="theme-icon"
+              animate={{ rotate: isDarkMode ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {isDarkMode ? <FaSun /> : <FaMoon />}
+            </motion.div>
+          </button>
+
+          <button
+            className={`mobile-toggle ${showNav ? 'active' : ''}`}
+            onClick={() => setShowNav(!showNav)}
+            aria-label="Toggle navigation"
+          >
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="desktop-nav">
-          <motion.ul 
+          <motion.ul
             className="nav-links"
             initial="hidden"
             animate="visible"
             variants={navVariants}
           >
             {PageLinks.map((link) => (
-              <motion.li 
-                key={link.id} 
+              <motion.li
+                key={link.id}
                 className="nav-item"
                 variants={navItemVariants}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <a 
-                  href={link.href} 
+                <a
+                  href={link.href}
                   className="nav-link"
                   onClick={closeMobileMenu}
                 >
@@ -128,7 +148,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         <AnimatePresence>
           {showNav && (
-            <motion.div 
+            <motion.div
               className="mobile-nav"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
@@ -137,15 +157,15 @@ const Header = () => {
             >
               <div className="mobile-nav-header">
                 <span className="nav-title">Navigation</span>
-                     <img src={image} alt='profile' className='nav-img'/>
-                  <small className='small'>adino aschalew</small>
-               
+                <img src={image} alt='profile' className='nav-img' />
+                <small className='small'>adino aschalew</small>
+
               </div>
-              
+
               <nav className="mobile-nav-content">
                 <ul className="mobile-nav-links">
                   {PageLinks.map((link) => (
-                    <motion.li 
+                    <motion.li
                       key={link.id}
                       initial={{ x: 20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}

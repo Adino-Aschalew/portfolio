@@ -6,19 +6,20 @@ import Services from './components/Services';
 import Footer from './components/Footer';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import { DarkModeProvider } from './contexts/DarkModeContext';
 
 const App = () => {
-  return ( 
-    <>
+  return (
+    <DarkModeProvider>
       <Header />
       <Home />
       <About />
-      <Skills/>
+      <Skills />
       <Projects />
-      <Services/>
+      <Services />
       <Contact />
-      <Footer/>
-    </> 
+      <Footer />
+    </DarkModeProvider>
   );
 }
 
