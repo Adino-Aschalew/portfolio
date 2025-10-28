@@ -21,7 +21,7 @@ const Projects = () => {
       image: '/images/project2.jpg', // Replace with your actual image
       technologies: ['React', 'CSS3', 'Tailwindcss'],
       github: 'https://github.com/Adino-Aschalew/Password-Generator',
-      demo: 'https://taskmanager-demo.example.com'
+      demo: 'https://multi-password-generator.netlify.app/'
     },
     {
       id: 3,
