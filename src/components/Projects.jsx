@@ -12,7 +12,7 @@ const Projects = () => {
       image: '/images/project1.jpg',
       technologies: ['React', 'CSS3', 'Tailwindcss'],
       github: 'https://github.com/Adino-Aschalew/Weather-App',
-      demo: 'https://ecommerce-demo.example.com'
+      demo: 'https://https://weather-mine-app.netlify.app/'
     },
     {
       id: 2,
