@@ -34,7 +34,7 @@ const Projects = () => {
       image: portfolioImg,
       technologies: ['React', 'CSS3', 'Framer Motion'],
       github: 'https://github.com/Adino-Aschalew/portfolio',
-      demo: 'https://adinosportfolio.vercel.app/'
+      demo: 'https://adinosportfolio-alpha.vercel.app/'
     },
     {
       id: 4,
