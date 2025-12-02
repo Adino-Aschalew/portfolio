@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import '../index.css';
@@ -9,15 +9,23 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_ste1o6a', '_ejs-test-mail-service_', e.target, 'OwiqXjdV5mi95vyNN')
-      .then((result) => {
+    emailjs.sendForm(
+      "service_ste1o6a",        
+      "template_0aiojwt",       
+      form.current,             
+      "vHswq59JJqrfMBiwf"       
+    )
+    .then(
+      (result) => {
         console.log(result.text);
-        alert('Message sent successfully!');
+        alert("Message sent successfully!");
         e.target.reset();
-      }, (error) => {
+      },
+      (error) => {
         console.log(error.text);
-        alert('Failed to send message. Please try again.');
-      });
+        alert("Failed to send message. Please try again.");
+      }
+    );
   };
 
   return (

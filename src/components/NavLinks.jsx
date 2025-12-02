@@ -9,9 +9,4 @@ export const PageLinks = [
 {id:6,href:'#contact',name:'contact'},
 
 ];
- export const SocioLinks = [
-    {id:1,href:'#',icon:<FaLinkedin/>},
-    {id:2,href:'#',icon:<FaFacebook/>},
-    {id:3,href:'#',icon:<FaInstagram/>},
-    {id:4,href:'#',icon:<FaTelegram/>},
- ]
+

@@ -1,4 +1,4 @@
-import { FaCode, FaMobileAlt, FaServer, FaPalette, FaChartLine, FaTools } from 'react-icons/fa';
+import { FaServer, FaPalette, FaChartLine, FaTools } from 'react-icons/fa';
 import { MdWeb, MdSpeed, MdSecurity } from 'react-icons/md';
 import { TbDeviceMobileCode } from 'react-icons/tb';
 

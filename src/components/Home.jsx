@@ -4,27 +4,43 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { motion, AnimatePresence } from 'framer-motion';
 import heroImage from '../assets/image.jpg';
 import '../index.css';
+import resumePDF from "../assets/Adino's_Resume.pdf";
+
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [textIndex, setTextIndex] = useState(0);
   const [showSocial, setShowSocial] = useState(false);
   const socialRef = useRef(null);
-  const fullText = 'Frontend Developer';
-  const typingSpeed = 100; // ms per character
+
+  const texts = ["Frontend Developer", "Graphics Designer"]; // both words
+  const typingSpeed = 100;
+
+  const fullText = texts[textIndex]; 
 
   // Typing effect
   useEffect(() => {
     if (currentIndex < fullText.length) {
       const timeout = setTimeout(() => {
-        setCurrentText(prevText => prevText + fullText[currentIndex]);
-        setCurrentIndex(prevIndex => prevIndex + 1);
+        setCurrentText(prev => prev + fullText[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
       }, typingSpeed);
 
       return () => clearTimeout(timeout);
+    } 
+    else {
+      const timeout = setTimeout(() => {
+        setCurrentText("");
+        setCurrentIndex(0);
+        setTextIndex(prev => (prev + 1) % texts.length); 
+      }, 1500);
+
+      return () => clearTimeout(timeout);
     }
-  }, [currentIndex]);
+  }, [currentIndex, textIndex]);
+
 
   // Fade in effect
   useEffect(() => {
@@ -44,10 +60,10 @@ const Home = () => {
   }, []);
 
   const socialLinks = [
-    { icon: <FaGithub />, url: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: <FaLinkedin />, url: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: <FaTwitter />, url: 'https://twitter.com/yourusername', label: 'Twitter' },
-    { icon: <HiOutlineMail />, url: 'mailto:your.email@example.com', label: 'Email' },
+    { icon: <FaGithub />, url: 'https://github.com/Adino-Aschalew', label: 'GitHub' },
+    { icon: <FaLinkedin />, url: 'https://linkedin.com/in/Adino-Aschalew', label: 'LinkedIn' },
+    { icon: <FaTwitter />, url: 'https://twitter.com/Adino-Aschalew', label: 'Twitter' },
+    { icon: <HiOutlineMail />, url: 'adinoaschalew1995@gmail.com', label: 'Email' },
   ];
 
   const containerVariants = {
@@ -116,7 +132,7 @@ const Home = () => {
                 Get In Touch <FaArrowRight className="btn-icon" />
               </a>
               <a 
-                href="/resume.pdf" 
+                href={resumePDF} 
                 download 
                 className="btn secondary-btn"
               >

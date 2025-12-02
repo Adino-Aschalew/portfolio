@@ -46,12 +46,17 @@ const Skills = () => {
       { name: 'CSS3', level: 90 },
       { name: 'JavaScript', level: 88 },
       { name: 'React', level: 85 },
+      { name: 'Tailwindcss', level: 80 },
     ],
     'Backend & Database': [
       { name: 'Node.js', level: 82 },
+      { name: 'Express js', level: 80 },
       { name: 'MySQL', level: 70 }
     ],
     'Tools & Other': [
+      { name: 'Photoshop', level: 91 },
+      { name: 'Illustrator', level: 78 },
+      { name: 'Canva', level: 80 },
       { name: 'Git & GitHub', level: 88 },
       { name: 'VS Code', level: 92 },
       { name: 'UI/UX Principles', level: 80 },
@@ -85,11 +90,8 @@ const Skills = () => {
                     <div className="progress-container">
                       <div 
                         className="progress-bar"
-                        data-percent={`${skill.level}%`}
-                        data-level={level}
                         style={{ '--progress': `${skill.level}%` }}
                       >
-                        <span className="progress-percent">{skill.level}%</span>
                       </div>
                     </div>
                   </div>

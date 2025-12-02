@@ -1,4 +1,5 @@
-import { FaCode, FaPaintBrush, FaMobile, FaServer } from 'react-icons/fa';
+import resumePDF from "../assets/Adino's_Resume.pdf";
+import { FaCode, FaPaintBrush, FaMobile, FaServer,FaPenNib  } from 'react-icons/fa';
 
 const About = () => {
   const skills = [
@@ -6,6 +7,8 @@ const About = () => {
     { icon: <FaPaintBrush className="skill-icon" />, name: 'UI/UX Design', description: 'Creating beautiful and intuitive user interfaces that enhance user experience.' },
     { icon: <FaMobile className="skill-icon" />, name: 'Responsive Design', description: 'Ensuring your website looks great on all devices and screen sizes.' },
     { icon: <FaServer className="skill-icon" />, name: 'Backend Development', description: 'Building robust server-side applications and APIs.' },
+    { icon: <FaPenNib className="skill-icon" />, name: 'As Designer', description: 'Design a visually creative and stuning Poster, Logo, Banner and the same as you want.' },
+
   ];
 
   return (
@@ -37,7 +40,10 @@ const About = () => {
               ))}
             </div>
             
-            <button className="cta-button">Download CV</button>
+            <button className="cta-button">
+              <a href={resumePDF}>
+            
+              Download CV </a></button>
           </div>
         </div>
       </div>

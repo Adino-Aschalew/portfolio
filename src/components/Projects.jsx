@@ -1,45 +1,59 @@
 
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import '../index.css';
-import heroImage from '../assets/image.jpg';
+import commerceImg from '../assets/shop.png';
+import weatherImg from '../assets/weather.png';
+import portfolioImg from '../assets/portfolio.png';
+import passwordImg from '../assets/password.png';
+import ethioroadImg from '../assets/ethioroad.png';
 
 const Projects = () => {
   const projects = [
-    {
+     {
       id: 1,
-      title: 'Weather App',
-      description: 'A responsive weather application that displays real-time weather data from the OpenWeatherMap API. It provides users with accurate temperature, humidity, and city-based weather updates in a sleek, modern interface..',
-      image: '/images/project1.jpg',
-      technologies: ['React', 'CSS3', 'Tailwindcss'],
-      github: 'https://github.com/Adino-Aschalew/Weather-App',
-      demo: 'https://https://weather-mine-app.netlify.app/'
+      title: 'Shop-Hub E-commerce',
+      description: 'An e-commerce platform that offers a seamless shopping experience with features like product browsing, user authenthication, shopping cart, and secure checkeout process.',
+      image: commerceImg,
+      technologies: ['React', 'CSS3'],
+      github: 'https://github.com/Adino-Aschalew/ShopHub.git',
+      demo: 'https://shophub-five-pi.vercel.app/'
     },
     {
       id: 2,
-      title: 'Password Generator App',
-      description: 'A secure password generator app that creates strong, customizable passwords instantly. It allows users to choose password length and character types through a clean and responsive interface.',
-      image: '/images/project2.jpg', // Replace with your actual image
+      title: 'Weather App',
+      description: 'A responsive weather application that displays real-time weather data from the OpenWeatherMap API. It provides users with accurate temperature, humidity, and city-based weather updates in a sleek, modern interface..',
+      image: weatherImg,
       technologies: ['React', 'CSS3', 'Tailwindcss'],
-      github: 'https://github.com/Adino-Aschalew/Password-Generator',
-      demo: 'https://multi-password-generator.netlify.app/'
+      github: 'https://github.com/Adino-Aschalew/Weather-App',
+      demo: 'https://weatherapp-dun-xi.vercel.app/'
     },
-    {
+     {
       id: 3,
       title: 'Portfolio Website',
       description: 'A personal portfolio website to showcase projects and skills with a clean, modern design.',
-      image: '/images/project3.jpg', // Replace with your actual image
-      technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
+      image: portfolioImg,
+      technologies: ['React', 'CSS3', 'Framer Motion'],
       github: 'https://github.com/Adino-Aschalew/portfolio',
-      demo: 'https://yourportfolio.example.com'
+      demo: 'https://adinosportfolio.vercel.app/'
     },
     {
       id: 4,
+      title: 'Password Generator App',
+      description: 'A secure password generator app that creates strong, customizable passwords instantly. It allows users to choose password length and character types through a clean and responsive interface.',
+      image: passwordImg, 
+      technologies: ['React', 'CSS3', 'Tailwindcss'],
+      github: 'https://github.com/Adino-Aschalew/Password-Generator',
+      demo: 'https://passwordgenerator-kappa-seven.vercel.app/'
+    },
+   
+    {
+      id: 5,
       title: 'Ethio-Road App',
       description: 'Ethio-Road is a visiting and travel service app that helps users explore famous destinations, hotels, and tourist attractions across Ethiopia. It provides real-time navigation, location details, and travel assistance to make trip planning easier and more enjoyable.',
-      image: { heroImage }, // Replace with your actual image
-      technologies: ['React', 'CSS', 'Redux'],
+      image: ethioroadImg, 
+      technologies: ['React', 'CSS'],
       github: 'https://github.com/Adino-Aschalew/Ethio-Road',
-      demo: 'https://recipefinder-demo.example.com'
+      demo: 'https://ethioroad.vercel.app/'
     }
   ];
 
@@ -57,7 +71,7 @@ const Projects = () => {
             <div key={project.id} className="project-card">
               <div className="project-image">
                 <img
-                  src={heroImage}
+                  src={project.image}
                   alt={project.title}
                   onError={(e) => {
                     e.target.onerror = null;
